@@ -6,6 +6,9 @@ authors = ["Fernnando Sussmann <fernnandosussmann@gmail.com>"]
 readme = "README.md"
 packages = [{include = "germination_tracker"}]
 
+[tool.pytest.ini_options]
+pythonpath = [ "." ]
+
 [tool.poetry.dependencies]
 python = "^3.8"
 pytest = "^7.3.1"
