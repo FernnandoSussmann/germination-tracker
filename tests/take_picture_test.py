@@ -13,7 +13,7 @@ def test_take_picture(video_capture):
 
     video_capture.return_value.read.return_value = ("ok", frame)
 
-    video_capture_adm.init_capture()
+    video_capture_adm.capture()
     video_capture_adm.take_picture()
 
     video_capture.assert_called_with(1)
