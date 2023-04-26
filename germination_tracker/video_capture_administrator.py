@@ -1,4 +1,6 @@
 import cv2
+from germination_tracker.exceptions.frame_loader_exception import FrameLoadError
+
 
 
 class VideoCaptureAdministrator:
@@ -14,9 +16,22 @@ class VideoCaptureAdministrator:
         self.ret = None
         self.frame = None
 
+    def validate_frame(self, frame):
+        if frame is None:
+            raise FrameLoadError("Frame with None value")
+
+
     def capture(self):
         cam = cv2.VideoCapture(self.cam_index)
-        ret, frame = cam.read()
+
+        try:
+            ret, frame = cam.read()
+            self.validate_frame(frame)
+        except FrameLoadError as ferr:
+            raise ferr
+        except Exception as e:
+            raise FrameLoadError(str(e), e)
+        
         self.ret = ret
         self.frame = frame
 
