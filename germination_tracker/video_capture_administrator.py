@@ -1,4 +1,5 @@
 import cv2
+import os
 from germination_tracker.exceptions.frame_loader_exception import FrameLoadError
 
 
@@ -34,4 +35,7 @@ class VideoCaptureAdministrator:
         
         self.ret = ret
         self.frame = frame
-
+    
+    def save_picture(self):
+        full_path = os.path.join(self.destination_folder, self.filename)
+        cv2.imwrite(full_path, self.frame)

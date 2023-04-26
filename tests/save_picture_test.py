@@ -1,8 +1,9 @@
 from unittest import mock
+from germination_tracker.video_capture_administrator import VideoCaptureAdministrator
 
 
-@mock.patch("cv2.VideoCapture.__new__")
-def test_take_picture(video_capture):
+@mock.patch("cv2.imwrite", autospec=True)
+def test_save_picture(writer):
     frame = mock.Mock()
     destination_folder = "/tmp/tests/pictures"
     filename = "test_pic.png"
@@ -11,14 +12,11 @@ def test_take_picture(video_capture):
         cam_index=1, destination_folder=destination_folder, filename=filename
     )
 
-    video_capture.return_value.read.return_value = ("ok", frame)
+    video_capture_adm.frame = frame
 
-    video_capture_adm.capture()
-    video_capture_adm.take_picture()
+    video_capture_adm.save_picture()
 
-    video_capture.assert_called_with(1)
-
-    video_capture.return_value.imwrite.assert_called_with(
+    writer.assert_called_with(
         f"{destination_folder}/{filename}",
         frame,
     )

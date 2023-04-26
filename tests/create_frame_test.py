@@ -15,7 +15,6 @@ def test_create_frame(video_capture):
 
     video_capture_adm.capture()
 
-    
     video_capture.return_value.read.assert_called_once()
     video_capture_adm.ret == "ok"
     video_capture_adm.frame == frame
@@ -25,7 +24,9 @@ def test_create_frame(video_capture):
 def test_create_frame_exception(video_capture):
     video_capture.return_value.read.return_value = (None, None)
 
-    with pytest.raises(FrameLoadError, match="Image could not be capture for an unknown reasons.*"):
+    with pytest.raises(
+        FrameLoadError, match="Image could not be capture for an unknown reasons.*"
+    ):
         video_capture_adm = VideoCaptureAdministrator(
             cam_index=1, destination_folder="", filename=""
         )
