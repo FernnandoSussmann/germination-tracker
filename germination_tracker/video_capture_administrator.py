@@ -19,7 +19,7 @@ class VideoCaptureAdministrator:
 
     def validate_frame(self, frame):
         if frame is None:
-            raise FrameLoadError("Frame with None value")
+            raise FrameLoadError("Frame with None value", Exception())
 
 
     def capture(self):
@@ -37,5 +37,6 @@ class VideoCaptureAdministrator:
         self.frame = frame
     
     def save_picture(self):
+        self.validate_frame(self.frame)
         full_path = os.path.join(self.destination_folder, self.filename)
         cv2.imwrite(full_path, self.frame)
