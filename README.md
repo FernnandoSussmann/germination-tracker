@@ -9,7 +9,7 @@ Example:
 poetry run python main.py --cam_index 2 --destination_folder /path/where/you/want/to/save/the/image/ --filename sample
 ```
 Output:
-![Seeds](samples/sample_2023-04-26 11:35:55.568844.png?raw=true)
+![Seeds](germination-tracker/samples/sample_2023-04-26 11:35:55.568844.png?raw=true)
 
 ###### Warning
 Path must exists when running the application.
