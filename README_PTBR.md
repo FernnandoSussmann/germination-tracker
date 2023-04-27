@@ -9,7 +9,7 @@ Exemplo:
 poetry run python main.py --cam_index 2 --destination_folder /local/de/destino/do/aquivo/ --filename amostra
 ```
 Resultado:
-![Seeds](samples/sample_2023-04-26 11:35:55.568844.png)
+![Seeds](samples/sample_2023-04-26 11:35:55.568844.png?raw=true)
 
 ###### Aviso
 O diretório de destino deve existir quando a execução ocorrer.
