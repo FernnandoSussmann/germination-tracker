@@ -13,6 +13,7 @@ pythonpath = [ "." ]
 python = "^3.8"
 pytest = "^7.3.1"
 opencv-python = "^4.7.0.72"
+pillow = "^9.5.0"
 
 
 [build-system]
