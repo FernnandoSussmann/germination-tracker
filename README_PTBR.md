@@ -15,6 +15,7 @@ Resultado:
 O diretório de destino deve existir quando a execução ocorrer.
 
 # Como executar
+###### Todo script tem a opção -h ou --help para descrever seus argumentos 
 Você deve instalar o [poetry](https://python-poetry.org/). Dentro da pasta raiz do projeto execute o seguinte comando para atualizar as dependencias:
 ```sh
 poetry update
@@ -23,6 +24,13 @@ Depois rode:
 ```sh
 poetry run python main.py --cam_index [valor inteiro] --destination_folder [path] --filename [string]
 ```
+
+## Criando gif das suas imagens
+Para criar gif das imagens coletadas você precisa executar o script `gif.py` da seguinte maneira:
+```sh
+poetry run python gif.py --source_folder [path] --destination_folder [path] --filename [valor str] --images_format [valor str] --duration [valor int (opcional)] --loops [valor int (opcional)]
+```
+
 
 ## Como testar
 Execute:
