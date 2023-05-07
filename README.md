@@ -21,7 +21,7 @@ Output:\
 ![SeedsGrowing](https://github.com/FernnandoSussmann/germination-tracker/blob/creating_gif_from_images/samples/sample.gif?raw=true)
 
 ###### Warning
-Path must exists when running the application.
+Paths must exist when running the application.
 
 # How to run
 ###### Every executable script has -h or --help to explain it's arguments 
